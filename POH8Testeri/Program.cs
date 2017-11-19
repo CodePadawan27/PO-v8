@@ -21,24 +21,25 @@ namespace POH8Testeri
             TuoteRepository tr = new TuoteRepository();// (yhteysasetukset.ConnectionString);
             TuoteRyhmaRepository trr = new TuoteRyhmaRepository();// (yhteysasetukset.ConnectionString);
 
-            Console.WriteLine("Terve, ole hyvä ja valitse\n1. Demo1\n2. Demo2\n3. Demo3\n4. Demo4\n5. Demo5");
-            int syote = int.Parse(Console.ReadLine());
+            Console.WriteLine("Terve, ole hyvä ja valitse (haku saattaa kestää hetken)\n\n1. Demo1 (LKM ja tuote id:n mukaan)\n2. Demo2 (Ryhmälistaus ja ryhmään kuuluvat tuotteet ryhmäid:n mukaan)\n3. Demo3 (Uuden ryhmän lisäys)\n4. Demo4 (Ryhmän tietojen muutos)\n5. Demo5 (Ryhmän poisto)");
+            //int syote = int.Parse(Console.ReadLine());
+            var valinta = Console.ReadKey(true);
 
-            switch (syote)
+            switch (valinta.Key)
             {
-                case 1:
+                case ConsoleKey.D1:
                     Demo1(tr);
                     break;
-                case 2:
+                case ConsoleKey.D2:
                     Demo2(trr);
                     break;
-                case 3:
+                case ConsoleKey.D3:
                     Demo3(trr);
                     break;
-                case 4:
+                case ConsoleKey.D4:
                     Demo4(trr);
                     break;
-                case 5:
+                case ConsoleKey.D5:
                     Demo5(trr);
                     break;
                 default:
